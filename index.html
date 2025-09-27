@@ -3,1123 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>טריף שילדס בע"מ | ייעוץ מיגון פיזי מקצועי</title>
+    <title>ייעוץ מיגון פיזי</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #0056b3;
+            --text-light: #fff;
+            --text-dark: #333;
+            --bg-light: #f9f9f9;
+            --gradient-bg: linear-gradient(to right, #007BFF, #0056b3);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2c5aa0;
-            --accent-color: #f56500;
-            --text-light: #ffffff;
-            --text-dark: #2d3748;
-            --background-light: #f7fafc;
-            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --section-bg: rgba(255, 255, 255, 0.95);
-        }
-
         body {
-            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-            direction: rtl;
-            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Language Container - Fixed for mobile */
-        .language-container {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .version {
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .version.hidden {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            position: absolute !important;
-            top: -99999px !important;
-            left: -99999px !important;
-            z-index: -999 !important;
-        }
-
-        /* Header */
-        .header {
-            background: var(--gradient-bg);
+        header {
+            background: var(--primary-color);
             color: var(--text-light);
-            padding: 1rem 0;
+            padding: 15px 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-img {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
+        header nav ul {
             list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
         }
 
-        .nav-links a {
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
             color: var(--text-light);
             text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
+            font-weight: bold;
         }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .lang-toggle {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: var(--text-light);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .lang-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Hero Section */
+        /* Hero section */
         .hero {
             background: var(--gradient-bg);
             color: var(--text-light);
-            padding: 120px 0 80px;
+            padding: 160px 0 80px; /* תוקן: ריווח עליון נוסף */
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        @media (max-width: 768px) {
+            .hero {
+                padding: 180px 0 80px; /* במסכים קטנים: עוד ריווח עליון */
+            }
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
-            word-wrap: break-word;
-            max-width: 100%;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-description {
+        .hero p {
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            opacity: 0.8;
         }
 
-        .cta-button {
-            background: var(--accent-color);
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .services, .about, .contact {
+            background: var(--bg-light);
+        }
+
+        footer {
+            background: var(--secondary-color);
             color: var(--text-light);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-            background: #e55a00;
-        }
-
-        /* Sections */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section:nth-child(even) {
-            background: var(--background-light);
-        }
-
-        .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
+            padding: 20px;
         }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-color);
-            margin: 1rem auto;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .credentials {
-            background: var(--section-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-right: 5px solid var(--accent-color);
-        }
-
-        .credentials h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .credentials ul {
-            list-style: none;
-        }
-
-        .credentials li {
-            margin-bottom: 0.8rem;
-            padding-right: 1.5rem;
-            position: relative;
-        }
-
-        .credentials li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--section-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            border-top: 5px solid var(--accent-color);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Challenges Section - FORCE WHITE TEXT */
-        .challenges {
-            background: var(--primary-color) !important;
-        }
-
-        .challenges,
-        .challenges *,
-        .challenges h1,
-        .challenges h2,
-        .challenges h3,
-        .challenges h4,
-        .challenges h5,
-        .challenges h6,
-        .challenges p,
-        .challenges div,
-        .challenges span {
-            color: var(--text-light) !important;
-        }
-
-        .challenges .section-title,
-        .challenges .section-title::after {
-            color: var(--text-light) !important;
-        }
-
-        .challenges-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .challenge-item, 
-        .solution-item {
-            margin-bottom: 2rem;
-        }
-
-        .challenge-item h4, 
-        .solution-item h4 {
-            color: var(--accent-color) !important;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Clients Section */
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .client-category {
-            background: var(--section-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .client-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .client-list {
-            list-style: none;
-        }
-
-        .client-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e2e8f0;
-            font-weight: 500;
-        }
-
-        .client-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Contact Section - FORCE WHITE TEXT */
-        .contact {
-            background: var(--gradient-bg) !important;
-        }
-
-        .contact,
-        .contact *,
-        .contact h1,
-        .contact h2,
-        .contact h3,
-        .contact h4,
-        .contact h5,
-        .contact h6,
-        .contact p,
-        .contact div,
-        .contact span {
-            color: var(--text-light) !important;
-        }
-
-        .contact .section-title {
-            color: var(--text-light) !important;
-        }
-
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-item h4 {
-            margin-bottom: 1rem;
-            color: var(--accent-color) !important;
-        }
-
-        .contact-item a {
-            color: var(--text-light) !important;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        /* English Version Styles */
-        .en {
-            direction: ltr;
-        }
-
-        .en .nav-links {
-            order: -1;
-        }
-
-        .en .about-grid {
-            grid-template-columns: 2fr 1fr;
-        }
-
-        .en .challenges-grid {
-            direction: ltr;
-        }
-
-        .en .credentials {
-            border-left: 5px solid var(--accent-color);
-            border-right: none;
-        }
-
-        .en .credentials li {
-            padding-left: 1.5rem;
-            padding-right: 0;
-        }
-
-        .en .credentials li::before {
-            left: 0;
-            right: auto;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.3;
-                margin-bottom: 1.5rem;
-                padding: 0 10px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-                padding: 0 10px;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-                padding: 0 10px;
-            }
-
-            .about-grid,
-            .challenges-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .section {
-                padding: 50px 0;
-            }
-
-            .hero {
-                padding: 100px 0 60px;
-            }
-
-            /* Fix clients section overflow */
-            .clients-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .client-list {
-                max-height: none;
-                overflow: visible;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-                line-height: 1.4;
-                padding: 0 15px;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-        }
-
-        /* Fix for landscape mobile */
-        @media screen and (max-height: 500px) and (orientation: landscape) {
-            .hero {
-                padding: 80px 0 40px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero-description {
-                font-size: 0.8rem;
-                margin-bottom: 1.5rem;
-            }
-        }
-
-        /* Fix clients section for desktop */
-        @media (min-width: 769px) {
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-                align-items: start;
-            }
-
-            .client-category {
-                height: fit-content;
-                min-height: 400px;
-            }
-
-            .client-list {
-                max-height: none;
-                overflow: visible;
-            }
-        }
-
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .mb-2 { margin-bottom: 1rem; }
-        .mb-3 { margin-bottom: 1.5rem; }
     </style>
 </head>
 <body>
-    <div class="language-container" id="main-container">
-        <!-- Hebrew Version -->
-        <div class="version he" id="hebrew-version">
-            <!-- Header -->
-            <header class="header">
-                <nav class="container">
-                    <div class="nav">
-                        <div class="logo">
-                            <img src="assets/logo/LOGO.png" alt="לוגו טריף שילדס" class="logo-img">
-                            טריף שילדס בע"מ
-                        </div>
-                        <ul class="nav-links">
-                            <li><a href="#he-about">אודות</a></li>
-                            <li><a href="#he-services">שירותים</a></li>
-                            <li><a href="#he-clients">לקוחות</a></li>
-                            <li><a href="#he-contact">צור קשר</a></li>
-                        </ul>
-                        <button class="lang-toggle" onclick="toggleLanguage()">English</button>
-                    </div>
-                </nav>
-            </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">בית</a></li>
+                <li><a href="#services">מהשירותים שלנו</a></li>
+                <li><a href="#about">מי אנחנו</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+                <li><a href="index_en.html">English</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>ייעוץ מיגון פיזי מקצועי</h1>
-                        <p class="hero-subtitle">30 שנות ניסיון | מומחיות מפיקוד העורף | שירות לכל הארץ</p>
-                        <p class="hero-description">
-                            מתמחים בתכנון ויישום פתרונות מיגון פיזי מתקדמים למרחבים מוגנים ומקלטים. 
-                            ליווי מקצועי מהתכנון הראשוני ועד לקבלת אישור פיקוד העורף.
-                        </p>
-                        <a href="#he-contact" class="cta-button">צור קשר עוד היום לייעוץ ראשוני ללא התחייבות</a>
-                    </div>
-                </div>
-            </section>
+    <section class="hero" id="home">
+        <h1>ייעוץ מיגון פיזי מקצועי</h1>
+        <p>הגנה מושלמת למבנים ותשתיות</p>
+    </section>
 
-            <!-- About Section -->
-            <section id="he-about" class="section">
-                <div class="container">
-                    <h2 class="section-title">מי אנחנו</h2>
-                    <div class="about-grid">
-                        <div class="credentials">
-                            <h3>האדם מאחורי החברה</h3>
-                            <p class="mb-3"><strong>טריף רסאן</strong> - מהנדס בניין רשוי ומומחה מיגון פיזי</p>
-                            <ul>
-                                <li>30 שנות ניסיון בתחום המיגון הפיזי</li>
-                                <li>22 שנות שירות בפיקוד העורף</li>
-                                <li>ראש ענף הנדסה ומיגון לשעבר</li>
-                                <li>מומחה בניסויי פיצוץ ובחינת מוצרי מיגון</li>
-                                <li>בעל ניסיון רב בכתיבת תקנות ומפרטי מיגון הנדסיים</li>
-                                <li>שירות לכל הארץ</li>
-                            </ul>
-                        </div>
-                        <div class="about-text">
-                            <p>
-                                <strong>טריף שילדס בע"מ</strong> מובילה בתחום ייעוץ המיגון הפיזי בישראל. 
-                                עם ניסיון ייחודי של 30 שנה, אנו מציעים פתרונות מקצועיים ומדויקים 
-                                לתכנון והקמת מרחבים מוגנים ומקלטים.
-                            </p>
-                            <p class="mb-3">
-                                הניסיון הרב שלנו בפיקוד העורף, כולל תפקידי מפתח בכתיבת תקנות 
-                                ומפרטי מיגון, מאפשר לנו להציע ללקוחותינו ייעוץ מהמקור - הבנה 
-                                עמוקה של הדרישות הרגולטוריות ויכולת ליישם אותן בצורה יעילה ומדויקת.
-                            </p>
-                            <p>
-                                אנו עובדים עם מגוון רחב של לקוחות - מיזמים פרטיים ועד פרויקטים 
-                                למערכת הביטחון, ומספקים שירות מקצועי ואמין לכל הארץ.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="services" id="services">
+        <h2>מהשירותים שלנו</h2>
+        <p>ייעוץ, תכנון ובקרה בתחום המיגון הפיזי</p>
+    </section>
 
-            <!-- Services Section -->
-            <section id="he-services" class="section">
-                <div class="container">
-                    <h2 class="section-title">השירותים שלנו</h2>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <h3>ייעוץ תכנון מרחבים מוגנים</h3>
-                            <p>תכנון מקצועי של מרחבים מוגנים ומקלטים בהתאם לתקנות ומפרטי פיקוד העורף. ליווי מהשלב הראשוני ועד לקבלת אישור סופי לתוכניות המיגון הפיזי.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>פיקוח עליון למיגון פיזי</h3>
-                            <p>פיקוח מקצועי על ביצוע עבודות המיגון להבטחת בנייה תקנית ומניעת חריגות העלולות לעכב את הפרויקט.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>ייעוץ לפרויקטים קיימים</h3>
-                            <p>בדיקה ושיפור של מערכות מיגון קיימות, שיקום ושדרוג מקלטים ומרחבים מוגנים במבנים קיימים.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>ביצוע סקרי מיגון</h3>
-                            <p>סקרים מקיפים של מצב המיגון הקיים במבנים והמלצות מקצועיות לשיפור ושדרוג.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="about" id="about">
+        <h2>מי אנחנו</h2>
+        <p>החברה המובילה בתחום ייעוץ המיגון בישראל</p>
+        <img src="LOGO/company_logo.png" alt="לוגו החברה" width="150">
+    </section>
 
-            <!-- Challenges Section -->
-            <section class="section challenges">
-                <div class="container">
-                    <h2 class="section-title">האתגרים שאנו פותרים</h2>
-                    <div class="challenges-grid">
-                        <div>
-                            <h3 style="color: var(--accent-color); margin-bottom: 2rem;">האתגרים שלקוחותינו נתקלים בהם:</h3>
-                            <div class="challenge-item">
-                                <h4>תקנות מורכבות ומשתנות</h4>
-                                <p>דרישות רגולטוריות שמתעדכנות כל הזמן ודורשות הבנה מעמיקה</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h4>חוסר הבנה של הדרישות</h4>
-                                <p>קשיים בפירוש הנחיות פיקוד העורף ומפרטים טכניים מורכבים</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h4>זמני אישור ארוכים</h4>
-                                <p>תהליכים ביורוקרטיים שמעכבים פרויקטים ויוצרים עלויות נוספות</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h4>עלויות לא צפויות</h4>
-                                <p>השקעות נוספות עקב חוסר תכנון נכון או הבנה שגויה של הדרישות</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--accent-color); margin-bottom: 2rem;">הפתרונות שאנו מציעים:</h3>
-                            <div class="solution-item">
-                                <h4>ייעוץ מוקדם ומדויק</h4>
-                                <p>מניעת בעיות בשלב התכנון החוסכת זמן וכסף בהמשך התהליך</p>
-                            </div>
-                            <div class="solution-item">
-                                <h4>ניסיון עמוק מול פיקוד העורף</h4>
-                                <p>הבנה יסודית של הדרישות, התהליכים והציפיות של הרגולטור</p>
-                            </div>
-                            <div class="solution-item">
-                                <h4>ליווי צמוד ומקצועי</h4>
-                                <p>הכוונה מקצועית לכל שלבי התהליך עד לקבלת האישור הסופי</p>
-                            </div>
-                            <div class="solution-item">
-                                <h4>ייעוץ מדויק ומפורט</h4>
-                                <p>הכוונה מקצועית המונעת עיכובים, דרישות נוספות ועלויות בלתי צפויות</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="contact" id="contact">
+        <h2>צור קשר</h2>
+        <p>מוכנים להתחיל? פנו אלינו עוד היום לייעוץ</p>
+        <form>
+            <input type="text" placeholder="שם מלא" required><br><br>
+            <input type="email" placeholder="אימייל" required><br><br>
+            <textarea placeholder="הודעה" required></textarea><br><br>
+            <button type="submit">שלח</button>
+        </form>
+    </section>
 
-            <!-- Clients Section -->
-            <section id="he-clients" class="section">
-                <div class="container">
-                    <h2 class="section-title">הלקוחות שלנו</h2>
-                    <p class="text-center mb-3" style="font-size: 1.2rem; color: var(--primary-color);">
-                        אנו גאים לעבוד עם מובילי השוק בתחומי הבנייה והפיתוח
-                    </p>
-                    <div class="clients-grid">
-                        <div class="client-category">
-                            <h3>יזמים וחברות בנייה</h3>
-                            <ul class="client-list">
-                                <li>אפריקה ישראל</li>
-                                <li>אמפ"א</li>
-                                <li>אורון תעשיות</li>
-                                <li>עמרם אברהם</li>
-                                <li>מרלן ייזום ופיתוח</li>
-                                <li>דב גראו חברה לבניין ופיתוח</li>
-                                <li>מנהלת המגורים צה"ל</li>
-                                <li>נרשא</li>
-                                <li>רשויות מקומיות ועיריות שונות</li>
-                                <li>מ.ש.י.ג יזמות</li>
-                                <li>י.מ נאמנות</li>
-                                <li>שטבן</li>
-                                <li>אורמקס</li>
-                                <li>אבניו פרויקטים</li>
-                                <li>אקזיט יובלים</li>
-                                <li>אנרג'קס</li>
-                                <li>דור כימיקלים</li>
-                            </ul>
-                        </div>
-                        <div class="client-category">
-                            <h3>משרדי תכנון הנדסה וניהול</h3>
-                            <ul class="client-list">
-                                <li>משרדי תכנון וניהול</li>
-                                <li>אפשטיין</li>
-                                <li>שלומי ממן</li>
-                                <li>מועלם אדריכלות והנדסת בניין</li>
-                                <li>דאטום מהנדסים</li>
-                                <li>אבי שטרנפילד</li>
-                                <li>ועוד רבים נוספים</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <footer>
+        <p>© 2025 כל הזכויות שמורות</p>
+    </footer>
+</body>
+</html>
 
-            <!-- Contact Section -->
-            <section id="he-contact" class="section contact">
-                <div class="container">
-                    <div class="contact-content">
-                        <h2 class="section-title">צור קשר</h2>
-                        <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                            מוכנים להתחיל? ניתן ייעוץ ראשוני ללא התחייבות
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <h4>טלפון</h4>
-                                <a href="tel:0529248161">052-924-8161</a>
-                            </div>
-                            <div class="contact-item">
-                                <h4>אימייל</h4>
-                                <a href="mailto:TARIF@TARIFSHIELDS.COM">TARIF@TARIFSHIELDS.COM</a>
-                            </div>
-                        </div>
-                        <div style="margin-top: 3rem;">
-                            <a href="tel:0529248161" class="cta-button">התקשר עוד היום</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+<!-- גרסה באנגלית -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Security Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">עברית</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- English Version -->
-        <div class="version en hidden" id="english-version">
-            <!-- Header -->
-            <header class="header">
-                <nav class="container">
-                    <div class="nav">
-                        <div class="logo">
-                            <img src="assets/logo/LOGO.png" alt="Tarif Shields Logo" class="logo-img">
-                            Tarif Shields Ltd.
-                        </div>
-                        <ul class="nav-links">
-                            <li><a href="#en-about">About</a></li>
-                            <li><a href="#en-services">Services</a></li>
-                            <li><a href="#en-clients">Clients</a></li>
-                            <li><a href="#en-contact">Contact</a></li>
-                        </ul>
-                        <button class="lang-toggle" onclick="toggleLanguage()">עברית</button>
-                    </div>
-                </nav>
-            </header>
+    <section class="hero" id="home">
+        <h1>Professional Physical Security Consulting</h1>
+        <p>Comprehensive protection for buildings and infrastructure</p>
+    </section>
 
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>Professional Physical Protection Consulting</h1>
-                        <p class="hero-subtitle">30 Years Experience | Home Front Command Expertise | Nationwide Service</p>
-                        <p class="hero-description">
-                            Specializing in the design and implementation of advanced physical protection solutions 
-                            for protected spaces and shelters. Professional guidance from initial planning to 
-                            receiving Home Front Command approval.
-                        </p>
-                        <a href="#en-contact" class="cta-button">Contact Today for Initial Consultation</a>
-                    </div>
-                </div>
-            </section>
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <p>Consulting, planning, and monitoring in the field of physical protection</p>
+    </section>
 
-            <!-- About Section -->
-            <section id="en-about" class="section">
-                <div class="container">
-                    <h2 class="section-title">About Us</h2>
-                    <div class="about-grid">
-                        <div class="about-text">
-                            <p>
-                                <strong>Tarif Shields Ltd.</strong> is a leader in physical protection consulting in Israel. 
-                                With unique 30-year experience, we provide professional and precise solutions 
-                                for planning and establishing protected spaces and shelters.
-                            </p>
-                            <p class="mb-3">
-                                Our extensive experience in the Home Front Command, including key positions in writing 
-                                regulations and protection specifications, allows us to offer our clients advice 
-                                from the source - deep understanding of regulatory requirements and the ability 
-                                to implement them efficiently and accurately.
-                            </p>
-                            <p>
-                                We work with a wide range of clients - from private developments to defense 
-                                system projects, providing professional and reliable service nationwide.
-                            </p>
-                        </div>
-                        <div class="credentials">
-                            <h3>The Person Behind the Company</h3>
-                            <p class="mb-3"><strong>Tarif Rassan</strong> - Licensed Civil Engineer & Physical Protection Expert</p>
-                            <ul>
-                                <li>30 years experience in physical protection</li>
-                                <li>22 years service in Home Front Command</li>
-                                <li>Former Head of Engineering & Protection Division</li>
-                                <li>Expert in explosion tests and protection product testing</li>
-                                <li>Extensive experience in writing protection regulations and engineering specifications</li>
-                                <li>Serving nationwide</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>The leading company in security consulting in Israel</p>
+        <img src="LOGO/company_logo.png" alt="Company Logo" width="150">
+    </section>
 
-            <!-- Services Section -->
-            <section id="en-services" class="section">
-                <div class="container">
-                    <h2 class="section-title">Our Services</h2>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <h3>Protected Space Planning Consultation</h3>
-                            <p>Professional planning of protected spaces and shelters according to Home Front Command regulations and specifications. Guidance from initial stage to final approval for physical protection plans.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Physical Protection Supervision</h3>
-                            <p>Professional supervision of protection work implementation to ensure standard construction and prevent deviations that could delay the project.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Existing Project Consultation</h3>
-                            <p>Review and improvement of existing protection systems, rehabilitation and upgrading of shelters and protected spaces in existing buildings.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Protection Surveys</h3>
-                            <p>Comprehensive surveys of existing protection status in buildings and professional recommendations for improvement and upgrading.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <p>Ready to start? Contact us today for consultation</p>
+        <form>
+            <input type="text" placeholder="Full Name" required><br><br>
+            <input type="email" placeholder="Email" required><br><br>
+            <textarea placeholder="Message" required></textarea><br><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
-            <!-- Challenges Section -->
-            <section class="section challenges">
-                <div class="container">
-                    <h2 class="section-title">Challenges We Solve</h2>
-                    <div class="challenges-grid">
-                        <div>
-                            <h3 style="color: var(--accent-color); margin-bottom: 2rem;">Challenges Our Clients Face:</h3>
-                            <div class="challenge-item">
-                                <h4>Complex and Changing Regulations</h4>
-                                <p>Regulatory requirements that are constantly updated and require deep understanding</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h4>Lack of Understanding Requirements</h4>
-                                <p>Difficulties in interpreting Home Front Command guidelines and complex technical specifications</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h4>Long Approval Times</h4>
-                                <p>Bureaucratic processes that delay projects and create additional costs</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h4>Unexpected Costs</h4>
-                                <p>Additional investments due to incorrect planning or misunderstanding of requirements</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--accent-color); margin-bottom: 2rem;">Solutions We Provide:</h3>
-                            <div class="solution-item">
-                                <h4>Early and Accurate Consultation</h4>
-                                <p>Preventing problems at the planning stage saves time and money in the process</p>
-                            </div>
-                            <div class="solution-item">
-                                <h4>Deep Experience with Home Front Command</h4>
-                                <p>Thorough understanding of requirements, processes and regulator expectations</p>
-                            </div>
-                            <div class="solution-item">
-                                <h4>Close and Professional Guidance</h4>
-                                <p>Professional guidance through all stages of the process until final approval</p>
-                            </div>
-                            <div class="solution-item">
-                                <h4>Precise and Detailed Consultation</h4>
-                                <p>Professional guidance that prevents delays, additional requirements and unexpected costs</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Clients Section -->
-            <section id="en-clients" class="section">
-                <div class="container">
-                    <h2 class="section-title">Our Clients</h2>
-                    <p class="text-center mb-3" style="font-size: 1.2rem; color: var(--primary-color);">
-                        We are proud to work with market leaders in construction and development
-                    </p>
-                    <div class="clients-grid">
-                        <div class="client-category">
-                            <h3>Developers & Construction Companies</h3>
-                            <ul class="client-list">
-                                <li>Africa Israel</li>
-                                <li>Ampa</li>
-                                <li>Oron Industries</li>
-                                <li>Amram Abraham</li>
-                                <li>Marlen Development</li>
-                                <li>Dov Grau Construction & Development</li>
-                                <li>IDF Housing Management</li>
-                                <li>Narsha</li>
-                                <li>Local authorities and municipalities</li>
-                                <li>M.S.Y.G Development</li>
-                                <li>Y.M Trust</li>
-                                <li>Shtaben</li>
-                                <li>Ormax</li>
-                                <li>Avniyu Projects</li>
-                                <li>Exit Yuvalim</li>
-                                <li>Energex</li>
-                                <li>Dor Chemicals</li>
-                            </ul>
-                        </div>
-                        <div class="client-category">
-                            <h3>Planning, Engineering & Management Firms</h3>
-                            <ul class="client-list">
-                                <li>Planning & Management Offices</li>
-                                <li>Epstein</li>
-                                <li>Shlomi Maman</li>
-                                <li>Moalem Architecture & Building Engineering</li>
-                                <li>Datum Engineers</li>
-                                <li>Avi Sternfeld</li>
-                                <li>And many more</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="en-contact" class="section contact">
-                <div class="container">
-                    <div class="contact-content">
-                        <h2 class="section-title">Contact Us</h2>
-                        <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                            Ready to get started? We provide initial consultation with no obligation
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <h4>Phone</h4>
-                                <a href="tel:0529248161">052-924-8161</a>
-                            </div>
-                            <div class="contact-item">
-                                <h4>Email</h4>
-                                <a href="mailto:TARIF@TARIFSHIELDS.COM">TARIF@TARIFSHIELDS.COM</a>
-                            </div>
-                        </div>
-                        <div style="margin-top: 3rem;">
-                            <a href="tel:0529248161" class="cta-button">Call Today</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <script>
-        let currentLanguage = 'he';
-        
-        function toggleLanguage() {
-            const heVersion = document.getElementById('hebrew-version');
-            const enVersion = document.getElementById('english-version');
-            const mainContainer = document.getElementById('main-container');
-            
-            if (currentLanguage === 'he') {
-                // Switch to English
-                heVersion.classList.add('hidden');
-                enVersion.classList.remove('hidden');
-                document.documentElement.setAttribute('lang', 'en');
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.body.style.direction = 'ltr';
-                currentLanguage = 'en';
-                
-                // Reset scroll position
-                enVersion.scrollTop = 0;
-                window.scrollTo(0, 0);
-                
-            } else {
-                // Switch to Hebrew
-                heVersion.classList.remove('hidden');
-                enVersion.classList.add('hidden');
-                document.documentElement.setAttribute('lang', 'he');
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.body.style.direction = 'rtl';
-                currentLanguage = 'he';
-                
-                // Reset scroll position
-                heVersion.scrollTop = 0;
-                window.scrollTo(0, 0);
-            }
-        }
-        
-        // Initialize the page properly
-        document.addEventListener('DOMContentLoaded', function() {
-            const heVersion = document.getElementById('hebrew-version');
-            const enVersion = document.getElementById('english-version');
-            
-            // Start with Hebrew visible, English completely hidden
-            heVersion.classList.remove('hidden');
-            enVersion.classList.add('hidden');
-            document.documentElement.setAttribute('lang', 'he');
-            document.documentElement.setAttribute('dir', 'rtl');
-            document.body.style.direction = 'rtl';
-            currentLanguage = 'he';
-            
-            // Prevent scroll bleeding between versions
-            document.body.style.overflowX = 'hidden';
-        });
-
-        // Smooth scrolling for anchor links - only within active version
-        document.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const targetId = e.target.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement && !targetElement.closest('.hidden')) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-
-        // Add animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        });
-
-        document.querySelectorAll('.service-card, .client-category, .credentials').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 54, 93, 0.95)';
-            } else {
-                header.style.background = 'var(--gradient-bg)';
-            }
-        });
-    </script>
+    <footer>
+        <p>© 2025 All rights reserved</p>
+    </footer>
 </body>
 </html>
