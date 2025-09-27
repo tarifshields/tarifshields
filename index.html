@@ -157,9 +157,12 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            word-wrap: break-word;
+            max-width: 100%;
         }
 
         .hero-subtitle {
@@ -469,7 +472,17 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
             }
 
             .about-grid,
@@ -493,6 +506,21 @@
 
             .hero {
                 padding: 100px 0 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+                line-height: 1.4;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
 
@@ -596,7 +624,7 @@
             <!-- Services Section -->
             <section id="he-services" class="section">
                 <div class="container">
-                    <h2 class="section-title">מהשירותים שלנו</h2>
+                    <h2 class="section-title">השירותים שלנו</h2>
                     <div class="services-grid">
                         <div class="service-card">
                             <h3>ייעוץ תכנון מרחבים מוגנים</h3>
@@ -668,7 +696,7 @@
             <!-- Clients Section -->
             <section id="he-clients" class="section">
                 <div class="container">
-                    <h2 class="section-title">מהלקוחות שלנו</h2>
+                    <h2 class="section-title">הלקוחות שלנו</h2>
                     <p class="text-center mb-3" style="font-size: 1.2rem; color: var(--primary-color);">
                         אנו גאים לעבוד עם מובילי השוק בתחומי הבנייה והפיתוח
                     </p>
@@ -717,7 +745,7 @@
                     <div class="contact-content">
                         <h2 class="section-title">צור קשר</h2>
                         <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                            מוכנים להתחיל? לייעוץ ראשוני ללא התחייבות
+                            מוכנים להתחיל? ניתן ייעוץ ראשוני ללא התחייבות
                         </p>
                         <div class="contact-info">
                             <div class="contact-item">
@@ -887,7 +915,7 @@
             <!-- Clients Section -->
             <section id="en-clients" class="section">
                 <div class="container">
-                    <h2 class="section-title">Part of Our Clients</h2>
+                    <h2 class="section-title">Our Clients</h2>
                     <p class="text-center mb-3" style="font-size: 1.2rem; color: var(--primary-color);">
                         We are proud to work with market leaders in construction and development
                     </p>
@@ -936,7 +964,7 @@
                     <div class="contact-content">
                         <h2 class="section-title">Contact Us</h2>
                         <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                            Ready to get started? Contact us for initial consultation with no obligation
+                            Ready to get started? We provide initial consultation with no obligation
                         </p>
                         <div class="contact-info">
                             <div class="contact-item">
