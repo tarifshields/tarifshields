@@ -10,6 +10,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         :root {
             --primary-color: #1a365d;
             --secondary-color: #2c5aa0;
@@ -20,6 +21,7 @@
             --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --section-bg: rgba(255, 255, 255, 0.95);
         }
+
         body {
             font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
             line-height: 1.6;
@@ -27,21 +29,32 @@
             direction: rtl;
             overflow-x: hidden;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* Language Container - Fixed for mobile */
+
+        /* Language Container - Strict version isolation */
         .language-container {
             position: relative;
             width: 100%;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
         }
+
         .version {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: auto;
             min-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
+
         .version.hidden {
             display: none !important;
             visibility: hidden !important;
@@ -51,6 +64,7 @@
             left: -99999px !important;
             z-index: -999 !important;
         }
+
         /* Header */
         .header {
             background: var(--gradient-bg);
@@ -62,12 +76,14 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
+
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
+
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
@@ -76,25 +92,30 @@
             align-items: center;
             gap: 0.5rem;
         }
+
         .logo-img {
             height: 40px;
             width: auto;
         }
+
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
             flex-wrap: wrap;
         }
+
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
         }
+
         .nav-links a:hover {
             color: var(--accent-color);
         }
+
         .lang-toggle {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -104,18 +125,21 @@
             cursor: pointer;
             transition: all 0.3s;
         }
+
         .lang-toggle:hover {
             background: rgba(255, 255, 255, 0.3);
         }
+
         /* Hero Section */
         .hero {
             background: var(--gradient-bg);
             color: var(--text-light);
-            padding: 120px 0 80px; /* נשמר הערך המקורי; JS מעדכן בפועל לפי גובה ה-header */
+            padding: 120px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -126,10 +150,12 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
             z-index: 1;
         }
+
         .hero-content {
             position: relative;
             z-index: 2;
         }
+
         .hero h1 {
             font-size: 3.2rem;
             margin-bottom: 1rem;
@@ -138,17 +164,20 @@
             word-wrap: break-word;
             max-width: 100%;
         }
+
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
+
         .hero-description {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 3rem;
             opacity: 0.8;
         }
+
         .cta-button {
             background: var(--accent-color);
             color: var(--text-light);
@@ -163,18 +192,22 @@
             display: inline-block;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
             background: #e55a00;
         }
+
         /* Sections */
         .section {
             padding: 80px 0;
         }
+
         .section:nth-child(even) {
             background: var(--background-light);
         }
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -182,6 +215,7 @@
             color: var(--primary-color);
             position: relative;
         }
+
         .section-title::after {
             content: '';
             display: block;
@@ -190,6 +224,7 @@
             background: var(--accent-color);
             margin: 1rem auto;
         }
+
         /* About Section */
         .about-grid {
             display: grid;
@@ -197,10 +232,12 @@
             gap: 4rem;
             align-items: center;
         }
+
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
         }
+
         .credentials {
             background: var(--section-bg);
             padding: 2rem;
@@ -208,19 +245,23 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-right: 5px solid var(--accent-color);
         }
+
         .credentials h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
+
         .credentials ul {
             list-style: none;
         }
+
         .credentials li {
             margin-bottom: 0.8rem;
             padding-right: 1.5rem;
             position: relative;
         }
+
         .credentials li::before {
             content: '✓';
             position: absolute;
@@ -228,12 +269,14 @@
             color: var(--accent-color);
             font-weight: bold;
         }
+
         /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
+
         .service-card {
             background: var(--section-bg);
             padding: 2rem;
@@ -242,19 +285,23 @@
             transition: all 0.3s;
             border-top: 5px solid var(--accent-color);
         }
+
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
+
         .service-card h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
+
         /* Challenges Section - FORCE WHITE TEXT */
         .challenges {
             background: var(--primary-color) !important;
         }
+
         .challenges,
         .challenges *,
         .challenges h1,
@@ -268,57 +315,69 @@
         .challenges span {
             color: var(--text-light) !important;
         }
+
         .challenges .section-title,
         .challenges .section-title::after {
             color: var(--text-light) !important;
         }
+
         .challenges-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: start;
         }
+
         .challenge-item, 
         .solution-item {
             margin-bottom: 2rem;
         }
+
         .challenge-item h4, 
         .solution-item h4 {
             color: var(--accent-color) !important;
             margin-bottom: 0.5rem;
         }
+
         /* Clients Section */
         .clients-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
+
         .client-category {
             background: var(--section-bg);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .client-category h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
             text-align: center;
         }
+
         .client-list {
             list-style: none;
         }
+
         .client-list li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #e2e8f0;
             font-weight: 500;
         }
+
         .client-list li:last-child {
             border-bottom: none;
         }
+
         /* Contact Section - FORCE WHITE TEXT */
         .contact {
             background: var(--gradient-bg) !important;
         }
+
         .contact,
         .contact *,
         .contact h1,
@@ -332,151 +391,139 @@
         .contact span {
             color: var(--text-light) !important;
         }
+
         .contact .section-title {
             color: var(--text-light) !important;
         }
+
         .contact-content {
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
         }
+
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
+
         .contact-item {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(10px);
         }
+
         .contact-item h4 {
             margin-bottom: 1rem;
             color: var(--accent-color) !important;
         }
+
         .contact-item a {
             color: var(--text-light) !important;
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: bold;
         }
+
         /* English Version Styles */
         .en {
             direction: ltr;
         }
+
         .en .nav-links {
             order: -1;
         }
+
         .en .about-grid {
             grid-template-columns: 2fr 1fr;
         }
+
         .en .challenges-grid {
             direction: ltr;
         }
+
         .en .credentials {
             border-left: 5px solid var(--accent-color);
             border-right: none;
         }
+
         .en .credentials li {
             padding-left: 1.5rem;
             padding-right: 0;
         }
+
         .en .credentials li::before {
             left: 0;
             right: auto;
         }
+
         /* Responsive */
         @media (max-width: 768px) {
             .language-container {
                 height: auto;
             }
+
             .version {
                 position: relative;
                 height: auto;
             }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1.5rem;
             }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
             .about-grid,
             .challenges-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
             .nav {
                 flex-direction: column;
                 gap: 1rem;
             }
+
             .nav-links {
                 gap: 1rem;
             }
+
             .section {
                 padding: 50px 0;
             }
+
             .hero {
                 padding: 100px 0 60px;
             }
-            /* Fix clients section overflow */
-            .clients-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .client-list {
-                max-height: none;
-                overflow: visible;
-            }
         }
+
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.8rem;
                 line-height: 1.4;
-                padding: 0 15px;
             }
+
             .hero-subtitle {
                 font-size: 1rem;
-                padding: 0 15px;
             }
+
             .section-title {
                 font-size: 2rem;
             }
-            .container {
-                padding: 0 15px;
-            }
         }
-        /* Fix for landscape mobile */
-        @media screen and (max-height: 500px) and (orientation: landscape) {
-            .hero {
-                padding: 80px 0 40px;
-            }
-            .hero h1 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-            .hero-subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
-            }
-            .hero-description {
-                font-size: 0.8rem;
-                margin-bottom: 1.5rem;
-            }
-        }
-        /* Fix clients section for desktop */
-        @media (min-width: 769px) {
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-                align-items: start;
-            }
-            .client-category {
-                height: fit-content;
-                min-height: 400px;
-            }
-            .client-list {
-                max-height: none;
-                overflow: visible;
-            }
-        }
+
         /* Animation */
         @keyframes fadeInUp {
             from {
@@ -488,9 +535,11 @@
                 transform: translateY(0);
             }
         }
+
         .fade-in-up {
             animation: fadeInUp 0.8s ease forwards;
         }
+
         /* Utility Classes */
         .text-center { text-align: center; }
         .mb-2 { margin-bottom: 1rem; }
@@ -519,6 +568,7 @@
                     </div>
                 </nav>
             </header>
+
             <!-- Hero Section -->
             <section class="hero">
                 <div class="container">
@@ -533,6 +583,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- About Section -->
             <section id="he-about" class="section">
                 <div class="container">
@@ -569,6 +620,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Services Section -->
             <section id="he-services" class="section">
                 <div class="container">
@@ -593,6 +645,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Challenges Section -->
             <section class="section challenges">
                 <div class="container">
@@ -639,6 +692,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Clients Section -->
             <section id="he-clients" class="section">
                 <div class="container">
@@ -684,6 +738,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Contact Section -->
             <section id="he-contact" class="section contact">
                 <div class="container">
@@ -709,6 +764,7 @@
                 </div>
             </section>
         </div>
+
         <!-- English Version -->
         <div class="version en hidden" id="english-version">
             <!-- Header -->
@@ -729,6 +785,7 @@
                     </div>
                 </nav>
             </header>
+
             <!-- Hero Section -->
             <section class="hero">
                 <div class="container">
@@ -744,6 +801,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- About Section -->
             <section id="en-about" class="section">
                 <div class="container">
@@ -781,6 +839,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Services Section -->
             <section id="en-services" class="section">
                 <div class="container">
@@ -805,6 +864,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Challenges Section -->
             <section class="section challenges">
                 <div class="container">
@@ -851,6 +911,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Clients Section -->
             <section id="en-clients" class="section">
                 <div class="container">
@@ -896,6 +957,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- Contact Section -->
             <section id="en-contact" class="section contact">
                 <div class="container">
@@ -922,13 +984,15 @@
             </section>
         </div>
     </div>
+
     <script>
-        let currentLanguage = 'he';                
+        let currentLanguage = 'he';
+        
         function toggleLanguage() {
             const heVersion = document.getElementById('hebrew-version');
             const enVersion = document.getElementById('english-version');
             const mainContainer = document.getElementById('main-container');
-                        
+            
             if (currentLanguage === 'he') {
                 // Switch to English
                 heVersion.classList.add('hidden');
@@ -937,11 +1001,11 @@
                 document.documentElement.setAttribute('dir', 'ltr');
                 document.body.style.direction = 'ltr';
                 currentLanguage = 'en';
-                                
+                
                 // Reset scroll position
                 enVersion.scrollTop = 0;
                 window.scrollTo(0, 0);
-                            
+                
             } else {
                 // Switch to Hebrew
                 heVersion.classList.remove('hidden');
@@ -950,36 +1014,18 @@
                 document.documentElement.setAttribute('dir', 'rtl');
                 document.body.style.direction = 'rtl';
                 currentLanguage = 'he';
-                                
+                
                 // Reset scroll position
                 heVersion.scrollTop = 0;
                 window.scrollTo(0, 0);
             }
-        }                
-        // Initialize the page properly
-        // Define adjustHeroPadding BEFORE it's used
-        function adjustHeroPadding() {
-            try {
-                const header = document.querySelector('.header');
-                const headerHeight = header ? header.getBoundingClientRect().height : 0;
-                const extraSpace = 20; // ריווח נוסף נוח
-                document.querySelectorAll('.hero').forEach(h => {
-                    // שמירת padding-bottom קיים (לא לשנות)
-                    const computed = window.getComputedStyle(h);
-                    const paddingBottom = computed.paddingBottom;
-                    // הגדרת padding-top כך שיתאים לגובה ה-header + ריווח
-                    h.style.paddingTop = (headerHeight + extraSpace) + 'px';
-                });
-            } catch (err) {
-                // אם משהו משתבש - אל נשבור את שאר הסקריפט
-                console.warn('adjustHeroPadding failed:', err);
-            }
         }
-
+        
+        // Initialize the page properly
         document.addEventListener('DOMContentLoaded', function() {
             const heVersion = document.getElementById('hebrew-version');
             const enVersion = document.getElementById('english-version');
-                        
+            
             // Start with Hebrew visible, English completely hidden
             heVersion.classList.remove('hidden');
             enVersion.classList.add('hidden');
@@ -987,12 +1033,9 @@
             document.documentElement.setAttribute('dir', 'rtl');
             document.body.style.direction = 'rtl';
             currentLanguage = 'he';
-                        
+            
             // Prevent scroll bleeding between versions
             document.body.style.overflowX = 'hidden';
-
-            // **NEW:** adjust hero padding initially (to prevent header overlap on phones)
-            adjustHeroPadding();
         });
 
         // Smooth scrolling for anchor links - only within active version
@@ -1001,7 +1044,8 @@
                 e.preventDefault();
                 const targetId = e.target.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                                if (targetElement && !targetElement.closest('.hidden')) {
+                
+                if (targetElement && !targetElement.closest('.hidden')) {
                     targetElement.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -1031,13 +1075,6 @@
             } else {
                 header.style.background = 'var(--gradient-bg)';
             }
-        });
-
-        // Re-adjust hero padding on resize / orientation changes
-        window.addEventListener('resize', adjustHeroPadding);
-        window.addEventListener('orientationchange', function() {
-            // small delay to allow orientation resize to complete
-            setTimeout(adjustHeroPadding, 150);
         });
     </script>
 </body>
