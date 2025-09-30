@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>טריף שילדס בע"מ | ייעוץ מיגון פיזי מקצועי</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-color: #1a365d;
             --secondary-color: #2c5aa0;
@@ -123,6 +119,11 @@
             line-height: 1.2;
             word-break: break-word;
         }
+        /* --- ANCHOR JUMP FIX --- */
+        .section-title,
+        .page-title {
+            scroll-margin-top: 140px;
+        }
         @media (max-width: 768px) {
             .hero {
                 padding-top: 140px;
@@ -145,10 +146,14 @@
             .section {
                 padding: 50px 0;
             }
+            .section-title,
+            .page-title {
+                scroll-margin-top: 140px;
+            }
         }
         @media (max-width: 480px) {
             .hero {
-                padding-top: 200px;
+                padding-top: 120px;
                 padding-bottom: 40px;
             }
             .hero .page-title {
@@ -157,6 +162,10 @@
             .section-title {
                 font-size: 2rem;
             }
+            .section-title,
+            .page-title {
+                scroll-margin-top: 110px;
+            }
         }
         @media (min-width: 992px) {
             .hero .page-title {
@@ -164,6 +173,10 @@
             }
             .hero {
                 padding-top: 220px;
+            }
+            .section-title,
+            .page-title {
+                scroll-margin-top: 220px;
             }
         }
         .hero::before {
@@ -176,10 +189,7 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
             z-index: 1;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+        .hero-content { position: relative; z-index: 2; }
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 2rem;
@@ -210,18 +220,13 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.3);
             background: #e55a00;
         }
-        .section {
-            padding: 80px 0;
-        }
-        .section:nth-child(even) {
-            background: var(--background-light);
-        }
+        .section { padding: 80px 0; }
+        .section:nth-child(even) { background: var(--background-light); }
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--primary-color);
-            scroll-margin-top: 120px;
         }
         .section-title::after {
             content: '';
@@ -237,10 +242,7 @@
             gap: 4rem;
             align-items: center;
         }
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
+        .about-text { font-size: 1.1rem; line-height: 1.8; }
         .credentials {
             background: var(--section-bg);
             padding: 2rem;
@@ -253,9 +255,7 @@
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
-        .credentials ul {
-            list-style: none;
-        }
+        .credentials ul { list-style: none; }
         .credentials li {
             margin-bottom: 0.8rem;
             padding-right: 1.5rem;
@@ -290,24 +290,11 @@
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
-        .challenges {
-            background: var(--primary-color) !important;
-        }
-        .challenges,
-        .challenges *,
-        .challenges h1,
-        .challenges h2,
-        .challenges h3,
-        .challenges h4,
-        .challenges h5,
-        .challenges h6,
-        .challenges p,
-        .challenges div,
-        .challenges span {
+        .challenges { background: var(--primary-color) !important; }
+        .challenges, .challenges *, .challenges h1, .challenges h2, .challenges h3, .challenges h4, .challenges h5, .challenges h6, .challenges p, .challenges div, .challenges span {
             color: var(--text-light) !important;
         }
-        .challenges .section-title,
-        .challenges .section-title::after {
+        .challenges .section-title, .challenges .section-title::after {
             color: var(--text-light) !important;
         }
         .challenges-grid {
@@ -316,9 +303,7 @@
             gap: 4rem;
             align-items: start;
         }
-        .challenge-item, .solution-item {
-            margin-bottom: 2rem;
-        }
+        .challenge-item, .solution-item { margin-bottom: 2rem; }
         .challenge-item h4, .solution-item h4 {
             color: var(--accent-color) !important;
             margin-bottom: 0.5rem;
@@ -339,36 +324,18 @@
             margin-bottom: 1rem;
             text-align: center;
         }
-        .client-list {
-            list-style: none;
-        }
+        .client-list { list-style: none; }
         .client-list li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #e2e8f0;
             font-weight: 500;
         }
-        .client-list li:last-child {
-            border-bottom: none;
-        }
-        .contact {
-            background: var(--gradient-bg) !important;
-        }
-        .contact,
-        .contact *,
-        .contact h1,
-        .contact h2,
-        .contact h3,
-        .contact h4,
-        .contact h5,
-        .contact h6,
-        .contact p,
-        .contact div,
-        .contact span {
+        .client-list li:last-child { border-bottom: none; }
+        .contact { background: var(--gradient-bg) !important; }
+        .contact, .contact *, .contact h1, .contact h2, .contact h3, .contact h4, .contact h5, .contact h6, .contact p, .contact div, .contact span {
             color: var(--text-light) !important;
         }
-        .contact .section-title {
-            color: var(--text-light) !important;
-        }
+        .contact .section-title { color: var(--text-light) !important; }
         .contact-content {
             text-align: center;
             max-width: 600px;
@@ -396,37 +363,18 @@
             font-size: 1.1rem;
             font-weight: bold;
         }
-        .en {
-            direction: ltr;
-        }
-        .en .nav-links {
-            order: -1;
-        }
-        .en .about-grid {
-            grid-template-columns: 2fr 1fr;
-        }
-        .en .challenges-grid {
-            direction: ltr;
-        }
-        .en .credentials {
-            border-left: 5px solid var(--accent-color);
-            border-right: none;
-        }
-        .en .credentials li {
-            padding-left: 1.5rem;
-            padding-right: 0;
-        }
-        .en .credentials li::before {
-            left: 0;
-            right: auto;
-        }
+        .en { direction: ltr; }
+        .en .nav-links { order: -1; }
+        .en .about-grid { grid-template-columns: 2fr 1fr; }
+        .en .challenges-grid { direction: ltr; }
+        .en .credentials { border-left: 5px solid var(--accent-color); border-right: none; }
+        .en .credentials li { padding-left: 1.5rem; padding-right: 0; }
+        .en .credentials li::before { left: 0; right: auto; }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px);}
             to { opacity: 1; transform: translateY(0);}
         }
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
+        .fade-in-up { animation: fadeInUp 0.8s ease forwards; }
         .text-center { text-align: center; }
         .mb-2 { margin-bottom: 1rem; }
         .mb-3 { margin-bottom: 1.5rem; }
@@ -486,7 +434,8 @@
                             </ul>
                         </div>
                         <div class="about-text">
-                            <p><strong>טריף שילדס בע"מ</strong> מובילה בתחום ייעוץ המיגון הפיזי בישראל. 
+                            <p>
+                                <strong>טריף שילדס בע"מ</strong> מובילה בתחום ייעוץ המיגון הפיזי בישראל. 
                                 עם ניסיון ייחודי של 30 שנה, אנו מציעים פתרונות מקצועיים ומדויקים 
                                 לתכנון והקמת מרחבים מוגנים ומקלטים.
                             </p>
