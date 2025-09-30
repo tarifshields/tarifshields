@@ -35,16 +35,6 @@
             color: var(--text-dark);
 	    scroll-margin-top: 120px; /* Ensures anchor navigation leaves it visible */
         }
-
-        /* התאמות למסכים קטנים (מובייל portrait) */
-        @media (max-width: 768px) {
-           .page-title {
-        	font-size: 1.7rem;
-        	margin: 20px 0 0 0;
-        	padding-top: 20px;
-        	color: var(--text-light);
-          }
-        }
         
         .container {
             max-width: 1200px;
@@ -152,29 +142,38 @@
         .hero {
             background: var(--gradient-bg);
             color: var(--text-light);
-            padding: 140px 0 120px;
+            padding: 140px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-@media (max-width: 768px) {
+	.hero .page-title {
+    		color: var(--text-light);
+    		font-size: 2.2rem;
+    		margin: 0 0 20px 0;
+    		line-height: 1.2;
+    		word-break: break-word; /* Prevent awkward wrapping */
+	}
+
+	.page-title {
+    		text-align: center;
+    		font-size: 2.2rem;
+    		margin: 20px 0;
+    		line-height: 1.2;
+    		color: var(--text-dark);
+	}
+
+	@media (min-width: 992px) {
+    		.hero .page-title {
+        		font-size: 3rem;
+    		}
+	}
+
     .hero {
-        padding-top: 140px;
-        padding-bottom: 60px;
+        padding-top: 220px;
     }
 }
-@media (max-width: 480px) {
-    .hero {
-        padding-top: 140px;
-        padding-bottom: 40px;
-    }
-}
-
-.hero .page-title {
-    color: var(--text-light);
-}
-
         .hero::before {
             content: '';
             position: absolute;
