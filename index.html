@@ -16,6 +16,9 @@
             --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --section-bg: rgba(255,255,255,0.95);
         }
+        html {
+            scroll-padding-top: 140px; /* this fixes anchor jump for all headings */
+        }
         body {
             font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
             line-height: 1.6;
@@ -118,13 +121,13 @@
             margin: 0 0 20px 0;
             line-height: 1.2;
             word-break: break-word;
-            scroll-margin-top: 140px;
         }
         .section-title,
         .page-title {
             scroll-margin-top: 140px;
         }
         @media (max-width: 768px) {
+            html { scroll-padding-top: 140px; }
             .hero {
                 padding-top: 140px;
                 padding-bottom: 60px;
@@ -146,12 +149,9 @@
             .section {
                 padding: 50px 0;
             }
-            .section-title,
-            .page-title {
-                scroll-margin-top: 140px;
-            }
         }
         @media (max-width: 480px) {
+            html { scroll-padding-top: 110px; }
             .hero {
                 padding-top: 220px;
                 padding-bottom: 40px;
@@ -162,21 +162,14 @@
             .section-title {
                 font-size: 2rem;
             }
-            .section-title,
-            .page-title {
-                scroll-margin-top: 110px;
-            }
         }
         @media (min-width: 992px) {
+            html { scroll-padding-top: 220px; }
             .hero .page-title {
                 font-size: 3rem;
             }
             .hero {
                 padding-top: 220px;
-            }
-            .section-title,
-            .page-title {
-                scroll-margin-top: 220px;
             }
         }
         .hero::before {
