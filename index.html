@@ -16,6 +16,9 @@
             --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --section-bg: rgba(255,255,255,0.95);
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
             line-height: 1.6;
@@ -118,19 +121,26 @@
             margin: 0 0 20px 0;
             line-height: 1.2;
             word-break: break-word;
+        }
+        /* התיקון העיקרי כאן - scroll-margin-top משתנה לפי גודל המסך */
+        .section-title {
             scroll-margin-top: 140px;
         }
-        .section-title,
-        .page-title {
-            scroll-margin-top: 140px;
+        .section { 
+            padding: 80px 0;
         }
+        /* מכשירים ניידים - Portrait Mode */
         @media (max-width: 768px) {
             .hero {
-                padding-top: 140px;
+                padding-top: 200px;
                 padding-bottom: 60px;
             }
             .hero .page-title {
                 font-size: 1.7rem;
+            }
+            /* התיקון - הגדלת scroll-margin */
+            .section-title {
+                scroll-margin-top: 180px;
             }
             .about-grid, .challenges-grid {
                 grid-template-columns: 1fr;
@@ -146,10 +156,6 @@
             .section {
                 padding: 50px 0;
             }
-            .section-title,
-            .page-title {
-                scroll-margin-top: 140px;
-            }
         }
         @media (max-width: 480px) {
             .hero {
@@ -159,12 +165,15 @@
             .hero .page-title {
                 font-size: 1.3rem;
             }
+            /* התיקון - הגדלת scroll-margin */
             .section-title {
                 font-size: 2rem;
+                scroll-margin-top: 200px;
             }
-            .section-title,
-            .page-title {
-                scroll-margin-top: 110px;
+        }
+        @media (min-width: 769px) and (max-width: 991px) {
+            .section-title {
+                scroll-margin-top: 140px;
             }
         }
         @media (min-width: 992px) {
@@ -174,9 +183,8 @@
             .hero {
                 padding-top: 220px;
             }
-            .section-title,
-            .page-title {
-                scroll-margin-top: 220px;
+            .section-title {
+                scroll-margin-top: 140px;
             }
         }
         .hero::before {
@@ -220,7 +228,6 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.3);
             background: #e55a00;
         }
-        .section { padding: 80px 0; }
         .section:nth-child(even) { background: var(--background-light); }
         .section-title {
             text-align: center;
@@ -610,7 +617,7 @@
                         <h1 class="page-title" id="en-hero">Professional Physical Protection Consulting</h1>
                         <p class="hero-subtitle">30 Years Experience | Home Front Command Expertise | Nationwide Service</p>
                         <p class="hero-description">
-                            Specializing in the design and implementation of advanced physical protection solutions 
+Specializing in the design and implementation of advanced physical protection solutions 
                             for protected spaces and shelters. Professional guidance from initial planning to 
                             receiving Home Front Command approval.
                         </p>
