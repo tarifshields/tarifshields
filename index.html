@@ -33,24 +33,16 @@
             margin: 20px 0;
             line-height: 1.2;
             color: var(--text-dark);
+	    scroll-margin-top: 120px; /* Ensures anchor navigation leaves it visible */
         }
 
         /* התאמות למסכים קטנים (מובייל portrait) */
         @media (max-width: 768px) {
-            .hero {
-                padding-top: 100px; /* or try 100px, 110px, but 120px is usually safe */
-    		padding-bottom: 60px;
-    		text-align: center;
-  	}
- 	 .hero h1 {
-    	   font-size: 2.5rem;
-    	   line-height: 1.3;
-    	   margin-bottom: 1.5rem;
-    	   text-align: center;
-    	   white-space: normal;
-    	   overflow: visible;
-    	   word-wrap: break-word;
-    	   max-width: 100%;
+           .page-title {
+        	font-size: 1.7rem;
+        	margin: 20px 0 0 0;
+        	padding-top: 20px;
+        	color: var(--text-light);
           }
         }
         
@@ -160,11 +152,28 @@
         .hero {
             background: var(--gradient-bg);
             color: var(--text-light);
-            padding: 120px 0 80px;
+            padding: 140px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+}
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 140px;
+        padding-bottom: 40px;
+    }
+}
+
+.hero .page-title {
+    color: var(--text-light);
+}
 
         .hero::before {
             content: '';
@@ -181,15 +190,6 @@
             position: relative;
             z-index: 2;
         }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
-            word-wrap: break-word;
-            max-width: 100%;
-         display: block; white-space: normal; overflow: visible; }
 
         .hero-subtitle {
             font-size: 1.5rem;
@@ -603,7 +603,7 @@
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1>ייעוץ מיגון פיזי מקצועי</h1>
+                        <h1 class="page-title">ייעוץ מיגון פיזי מקצועי</h1>
                         <p class="hero-subtitle">30 שנות ניסיון | מומחיות מפיקוד העורף | שירות לכל הארץ</p>
                         <p class="hero-description">
                             מתמחים בתכנון ויישום פתרונות מיגון פיזי מתקדמים למרחבים מוגנים ומקלטים. 
@@ -820,7 +820,7 @@
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1>Professional Physical Protection Consulting</h1>
+                        <h1 class="page-title">Professional Physical Protection Consulting</h1>
                         <p class="hero-subtitle">30 Years Experience | Home Front Command Expertise | Nationwide Service</p>
                         <p class="hero-description">
                             Specializing in the design and implementation of advanced physical protection solutions 
