@@ -275,6 +275,31 @@
             color: var(--accent-color);
             font-weight: bold;
         }
+	.profile-section {
+   	    text-align: center;
+    	    margin-bottom: 1.5rem;
+	}
+	.profile-image {
+    		width: 120px;
+    		height: 120px;
+    		border-radius: 50%;
+    		object-fit: cover;
+    		border: 4px solid var(--accent-color);
+    		box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    		margin-bottom: 0.8rem;
+	}
+	@media (max-width: 768px) {
+    		.profile-image {
+        	width: 100px;
+        	height: 100px;
+    		}
+	}
+	@media (max-width: 480px) {
+   	 .profile-image {
+       		 width: 90px;
+        	height: 90px;
+    		}
+	}
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
@@ -427,6 +452,10 @@
                     <div class="about-grid">
                         <div class="credentials">
                             <h3>האדם מאחורי החברה</h3>
+		<div class="profile-section">
+    			<img src="assets/profile_image/P2.png" alt="טריף רסאן" class="profile-image">
+		</div>
+
                             <p class="mb-3"><strong>טריף רסאן</strong> - מהנדס בניין רשוי ומומחה מיגון פיזי</p>
                             <ul>
                                 <li>30 שנות ניסיון בתחום המיגון הפיזי</li>
@@ -648,6 +677,9 @@ Specializing in the design and implementation of advanced physical protection so
                         </div>
                         <div class="credentials">
                             <h3>The Person Behind the Company</h3>
+			<div class="profile-section">
+    			<img src="assets/profile_image/P2.png" alt="Tarif Ghassan" class="profile-image">
+			</div>
                             <p class="mb-3"><strong>Tarif Ghassan</strong> - Licensed Civil Engineer & Physical Protection Expert</p>
                             <ul>
                                 <li>30 years experience in physical protection</li>
